@@ -1,7 +1,6 @@
 import os
 import exifread
 import simplekml
-# import folium
 
 def _convert_to_degress(value):
    d = float(value.values[0].num) / float(value.values[0].den)
