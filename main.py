@@ -9,11 +9,12 @@ def _convert_to_degress(value):
    return d + (m / 60.0) + (s / 3600.0)
 
 
-i=0
-j=0
+i = 0
+j = 0
 kml = simplekml.Kml()
+folder = "C:\\Users\\A43X\\Pictures\\Шелякин_Компьютер"
 
-for root, dirs, files in os.walk("D:\\Archive\\Photo_Pictures\\PHOTO_EDIT\\my_wallpapers\\2018"):
+for root, dirs, files in os.walk(folder):
    for file in files:
       if file.endswith(".jpg") or file.endswith(".jpeg"):
          print(os.path.join(root, file))
@@ -63,7 +64,7 @@ for root, dirs, files in os.walk("D:\\Archive\\Photo_Pictures\\PHOTO_EDIT\\my_wa
             kml.newpoint(name=str(file), coords=[(lon_value, lat_value)])
 
 print ('-------------------------------------------')
-print ('Кол-во файлов в папке *.jpg/*.jpeg: '+str(i))
-print ('Кол-во файлов c GPS в EXIF: '+str(j))
-kml.save("test.kml")
+print ('Общее кол-во файлов *.jpg/*.jpeg, найденных в папке: '+str(i))
+print ('Кол-во файлов c координатами в EXIF: '+str(j))
+kml.save("photo.kml")
 
