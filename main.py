@@ -65,6 +65,6 @@ for root, dirs, files in os.walk(folder):
 
 print ('-------------------------------------------')
 print ('Общее кол-во файлов *.jpg/*.jpeg, найденных в папке: '+str(i))
-print ('Кол-во файлов c координатами в EXIF: '+str(j))
+print ('Кол-во найденных файлов c координатами в EXIF: '+str(j))
 kml.save("photo.kml")
 
